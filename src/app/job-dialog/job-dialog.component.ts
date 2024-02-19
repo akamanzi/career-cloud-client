@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Job } from "../Types/Job";
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 export interface JobDialogData {
   job: Partial<Job>;
@@ -19,6 +20,12 @@ export interface JobDialogResult {
 })
 export class JobDialogComponent implements OnInit {
   private backupJob: Partial<Job> = { ...this.data.job };
+  jobFormGroup = new FormGroup({
+    title: new FormControl('', [Validators.pattern(/\s/), Validators.required]),
+    company: new FormControl('', [Validators.pattern(/\s/), Validators.required]),
+    jobDescription: new FormControl('', [Validators.required, Validators.pattern(/\s/), Validators.minLength(20)]),
+    date: new FormControl('', Validators.required)
+  });
 
   constructor(
     public dialogRef: MatDialogRef<JobDialogComponent>,

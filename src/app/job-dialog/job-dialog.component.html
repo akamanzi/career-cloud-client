@@ -1,21 +1,26 @@
+<form [formGroup]="jobFormGroup">
 <mat-form-field>
   <mat-label>Job Title</mat-label>
-  <input matInput cdkFocusInitial [(ngModel)]="data.job.title" />
+  <input matInput formControlName="title" cdkFocusInitial [(ngModel)]="data.job.title" />
+  <mat-error *ngIf="jobFormGroup.get('title')?.hasError('required')">Job title is required</mat-error>
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Company Name</mat-label>
-  <input matInput cdkFocusInitial [(ngModel)]="data.job.company" />
+  <input matInput formControlName="company" cdkFocusInitial [(ngModel)]="data.job.company" />
+  <mat-error *ngIf="jobFormGroup.get('company')?.hasError('required')">Company name is required</mat-error>
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Job Description</mat-label>
-  <textarea matInput [(ngModel)]="data.job.job_description"></textarea>
+  <textarea matInput  formControlName="jobDescription" [(ngModel)]="data.job.job_description"></textarea>
+  <mat-error *ngIf="jobFormGroup.get('jobDescription')?.hasError('required')">Job description is required</mat-error>
+  <mat-error *ngIf="jobFormGroup.get('jobDescription')?.hasError('minlength')">Must provide a longer job description</mat-error>
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Date of Posting</mat-label>
-  <textarea matInput [(ngModel)]="data.job.date"></textarea>
+  <textarea matInput formControlName="date" [(ngModel)]="data.job.date"></textarea>
 </mat-form-field>
 
 <div mat-dialog-actions>
@@ -30,3 +35,4 @@
   </button>
   <button mat-button (click)="cancel()">Cancel</button>
 </div>
+</form>
