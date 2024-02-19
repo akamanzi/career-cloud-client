@@ -26,5 +26,6 @@
   <router-outlet></router-outlet>
 </div>
 <ng-template #showLogin>
-  <firebase-ui ></firebase-ui>
+  <firebase-ui (signInSuccessWithAuthResult)="successLoginCallback($event)"
+  (signInFailure)="errorLoginCallback($event)" (uiShown)="uiShownCallback()"></firebase-ui>
 </ng-template>

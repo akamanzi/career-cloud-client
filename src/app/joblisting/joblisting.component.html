@@ -1,0 +1,9 @@
+<button mat-button (click)="addNewJob()" class="primary" style="float: left; background-color: blue; color: white; margin-left: 20px; margin-top: 10px;">Add New Job</button>
+<mat-card role="list" *ngFor="let job of jobData" class="list-item">
+  <div mat-line>{{job.title}}</div>
+  <div mat-line role="listitem">{{job.company}}</div>
+  <div mat-line role="listitem">{{job.job_description}}</div>
+  <div mat-line role="listitem">{{job.date}}</div>
+  <button mat-button (click)="EditJob($event , job)" class="primary">Edit</button>
+</mat-card>
+

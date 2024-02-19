@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
     }
 
   successLoginCallback(signInSuccessData: FirebaseUISignInSuccessWithAuthResult){
+    console.log(signInSuccessData.authResult.user)
+    console.log(signInSuccessData.authResult.additionalUserInfo)
     this.route.navigate(['dashboard']);
   }
 
