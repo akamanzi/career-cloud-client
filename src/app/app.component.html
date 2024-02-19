@@ -2,8 +2,8 @@
   <span>CareerCloud Job Portal</span>
   <mat-card-content style="float: right;" *ngIf="userLoggedIn">
     <div>
-      <button mat-button>Logout</button>
+      <button mat-raised-button color="blue" (click)="logout()">Logout</button>
     </div>
 </mat-card-content>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<router-outlet (notifyToolBar)="updateLoginStatus($event)"></router-outlet>

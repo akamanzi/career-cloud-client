@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { AuthService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,15 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 })
 export class AppComponent {
   title = 'job-portal';
-  userLoggedIn = false;
-  constructor(public fbAuth: AngularFireAuth,){
+  userLoggedIn: boolean = false;
+  constructor(public fbAuth: AngularFireAuth,private authService: AuthService){
+  }
+  logout(){
+    this.authService.logout();
+  }
 
+  updateLoginStatus(loginStatus: any){
+    console.log("status update ", loginStatus)
+    this.userLoggedIn = loginStatus
   }
 }

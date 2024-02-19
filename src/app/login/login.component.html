@@ -1,7 +1,7 @@
 
-<!-- <mat-card>
+<mat-card>
   <mat-card-content>
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
       <h2>Job Portal Log In</h2>
       <mat-error *ngIf="!loginValid">
         The username and password were not recognized
@@ -21,11 +21,11 @@
       <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
     </form>
   </mat-card-content>
-</mat-card> -->
-<div  *ngIf="fbAuth.user | async as user; else showLogin">
+</mat-card>
+<!-- <div  *ngIf="fbAuth.user | async as user; else showLogin">
   <router-outlet></router-outlet>
 </div>
 <ng-template #showLogin>
   <firebase-ui (signInSuccessWithAuthResult)="successLoginCallback($event)"
   (signInFailure)="errorLoginCallback($event)" (uiShown)="uiShownCallback()"></firebase-ui>
-</ng-template>
+</ng-template> -->
