@@ -4,6 +4,8 @@
   <div mat-line role="listitem">{{job.company}}</div>
   <div mat-line role="listitem">{{job.job_description}}</div>
   <div mat-line role="listitem">{{job.date}}</div>
-  <button mat-button (click)="EditJob($event , job)" class="primary">Edit</button>
+  <button mat-raised-button (click)="EditJob($event , job)" color="primary">
+    <mat-icon>edit</mat-icon>
+  </button>
 </mat-card>
 

@@ -1,11 +1,14 @@
 <mat-tab-group animationDuration="0ms" (selectedTabChange)="selectedDiagnostics($event)" style="margin-top: 15px;">
   <mat-tab label="Backend Roles" style="opacity:1;">
-      <app-joblisting></app-joblisting>
+      <app-joblisting jobCategory="backend-jobs"></app-joblisting>
   </mat-tab>
   <mat-tab label="Frontend Roles" style="opacity:1;">
-      <!-- <app-roles></app-roles> -->
+    <app-joblisting jobCategory="frontend"></app-joblisting>
+  </mat-tab>
+  <mat-tab label="Full Stack Roles" style="font-size: 16px; opacity:1;">
+    <app-joblisting jobCategory="fullstack"></app-joblisting>
   </mat-tab>
   <mat-tab label="All Roles" style="font-size: 16px; opacity:1;">
-      <!-- <app-users></app-users> -->
+    <app-joblisting jobCategory="all"></app-joblisting>
   </mat-tab>
 </mat-tab-group>

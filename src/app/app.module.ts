@@ -14,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatCard, MatCardContent, MatCardModule } from "@angular/material/card";
 import { MatListModule } from "@angular/material/list";
 import { MatTabsModule } from "@angular/material/tabs";
+import { MatDialogModule } from "@angular/material/dialog";
 import { environment } from "../environments/environment";
 // For Authentication
 import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
@@ -22,6 +23,7 @@ import {AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR} from "@angular
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JoblistingComponent } from './joblisting/joblisting.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { JobDialogComponent } from './job-dialog/job-dialog.component';
 
 // Firebase login configurations
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -45,7 +47,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    JoblistingComponent
+    JoblistingComponent,
+    JobDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatCardModule,
     MatTabsModule,
     MatListModule,
+    MatDialogModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
