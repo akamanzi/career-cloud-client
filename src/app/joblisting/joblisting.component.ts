@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobListingService } from '../Services/job-listing.service';
-
+import { MatCard } from "@angular/material/card";
 @Component({
   selector: 'app-joblisting',
   templateUrl: './joblisting.component.html',
@@ -55,6 +55,6 @@ export class JoblistingComponent implements OnInit {
   }
 
   addNewJob(){
-    
+
   }
 }
